@@ -2,7 +2,7 @@ import axios from 'axios';
 import axiosInstance from './axiosInterceptors';
 import { setValue, getValue, clearValue } from './storage';
 
-// GET、DELETE请求
+// 基于拦截器实例封装的 通用请求函数
 export function httpRequest(method, url, data, config = {}) {
     let reqObj = {
         url: url,
@@ -51,7 +51,6 @@ export const refreshToken = async callback => {
         if (err.response.status === 401) {
             // 跳转至登录页，提醒用户重新登录
             console.log('当前身份已过期，请重新登录');
-            login({ username: 'juqipeng', password: 'peng123150' });
         } else {
             console.log(err.response);
         }

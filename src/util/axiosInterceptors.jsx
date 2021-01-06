@@ -30,7 +30,6 @@ axiosInstance.interceptors.response.use(
                     const refresh = getValue('refresh');
                     if (!refresh) {
                         // 跳转至登录逻辑
-                        login({ username: 'juqipeng', password: 'peng123150' });
                     } else {
                         const { config } = error;
 
